@@ -21,7 +21,7 @@ function rFactorial(num) {
 var x = rFactorial(3);
 console.log(x);
 
-Sigma
+//Sigma
 function rSigma(num) {
     if(num == 1){
         return 1;
@@ -31,7 +31,7 @@ function rSigma(num) {
  var y = rSigma(3);
  console.log(y);
 
- fibonacci
+ //fibonacci
   function iFib(num){
       var odd = 1;
       var even = 1;
