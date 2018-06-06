@@ -89,23 +89,26 @@ function randArr() {
 function swapTwoValues(arr) {
     var temp =0;
     var num = 0;
-    while(num < arr.length){
-        temp = arr[num];
-        arr[num] = arr[arr.length - 1] 
-        arr[arr.length - 1] = temp;
-        break;
-    }
+    temp = arr[num];
+    arr[num] = arr[arr.length - 1] 
+    arr[arr.length - 1] = temp;
     return arr;
 }
-//var s = swapTwoValues([2, 3, 5, 7, 6]);
-//console.log(s);
+// var s = swapTwoValues([2, 3, 5, 7, 6]);
+// console.log(s);
 
 function reverseArr(arr) {
-    var temp = 0;
-    for(var idx=0; idx < arr.length; idx++){
-
+    var temp =0;
+   for(var idx=0; idx < arr.length/2; idx++){
+      temp = arr[idx];
+      arr[idx] = arr[arr.length - 1 - idx];
+      arr[arr.length-1 - idx] = temp;
     }
-    
+    return arr; 
 }
+// var r = reverseArr([-3,5,1,3,2,10]);
+// console.log(r);
+
+
 
 
