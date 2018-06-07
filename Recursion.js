@@ -96,25 +96,5 @@ var x = rSum(5);
 console.log(x);
 
 
-function iBS(arr, num){
-    var start = 0;
-    var end = arr.length-1;
-   
-    while( start <= end ){
-        var mid = start + end / 2;
-        if(arr[mid] ===  num){
-            return true;
-        }
-        else if(arr[mid] > num){
-            end = mid - 1;
-        }
-        else {
-            start = mid + 1;
-        }
-    }
-    return false;
-}
-var bS = iBS([-90,-19,0,2,12], 12);
-console.log(bS);
 
 
