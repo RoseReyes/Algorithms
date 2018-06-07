@@ -24,7 +24,7 @@ function iBS(arr, num){
            high = mid - 1;
         }
     }
-    return -1;
+    return false;
 }
 
 var x = iBS([-90,-19,0,2,12,29,33,190,320], 29);
