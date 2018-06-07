@@ -8,20 +8,19 @@ function linearSearch(num, arr){
 linearSearch(0, [4,5,1,2]);
 
 function iBS(arr, num){
-
-    var low = 0;
-    var high = arr.length - 1;
-    console.log(high, low)
-    while (low <= high) {
-       let mid = Math.floor((low + high)/2);
+    var min = 0;
+    var max = arr.length - 1;
+    console.log(max, min)
+    while (min <= max) {
+       let mid = Math.floor((min + max)/2);
        if (arr[mid] == num) {
             return mid;
        }
        else if (arr[mid] < num)  {
-           low = mid + 1;
+           min = mid + 1;
        }
        else {
-           high = mid - 1;
+           max = mid - 1;
         }
     }
     return false;
