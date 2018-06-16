@@ -110,5 +110,30 @@ function reverseArr(arr) {
 // console.log(r);
 
 
-
+function Anagram(strOne, strTwo) {
+    var newStr ="";
+    if(strTwo.length > strOne.length){
+        return false;
+    }
+    else {
+        for(var x=0; x < strOne.length; x++){
+            var currAnagram = strOne[x];
+            console.log(currAnagram);
+            for(var y=0; y <strTwo.length; y++){
+                if(strOne.length != newStr.length){
+                    if(strTwo[y] == currAnagram){
+                        newStr += strTwo[y];
+                        console.log(newStr.length, strOne.length);
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+    }
+    return true;
+}
+var x = Anagram("abcde", "cdbaefg");
+console.log(x);
 
