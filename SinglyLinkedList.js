@@ -65,7 +65,6 @@ this._length--;
 return deletedNode;
 }
 
-
 var x = new SLList();
 console.log(x.addFrontAndBack(1));
 console.log(x.addFrontAndBack(2));
@@ -75,5 +74,3 @@ console.log(x.addFrontAndBack(90));
 console.log(x.addFrontAndBack(79));
 console.log(x.contains(5));
 console.log(x.remove(3));
-
-
