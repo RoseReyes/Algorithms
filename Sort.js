@@ -1,4 +1,6 @@
 //bubble sort
+//compare the 1st item to the second itwem , if 1st item is bigger then we swap them to the second
+//until we reached the last element.
 
 function bubbleSort(arr) {
     var temp = 0;
@@ -16,26 +18,30 @@ function bubbleSort(arr) {
 //var b = bubbleSort([33,55,4,19,5,7]);
 //console.log(b);
 
+//Go through the array, find the index of the lowest element swap the lowest element with the first element. Hence first element is the lowest element in the array.
+//Now go through the rest of the array (excluding the first element) and find the index of the lowest and swap it with the second element.
+//thats how it continues to select (find out) the lowest element of the array and putting it on the left until it hits the last element.
 
-function sSort(arr) {
-    var temp =0;
+function selectionSort(arr) {
+    var temp, currMin;
+
     for(var x=0; x < arr.length; x++){
-        var currMin = x;
-        for(var y=1; y < arr.length; y++){
-            if(arr[y] < arr[currMin]){
-                currMin = y;
-            }
-            else {
-                temp = arr[y];
-                arr[y] = arr[currMin + 1];
-                arr[currMin + 1] = temp;
+        currMinIdx = x;
+
+        for(var y= x + 1; y < arr.length; y++){
+            if(arr[y] < arr[currMinIdx]){
+                currMinIdx = y;
             }
         }
+        temp = arr[x];
+        arr[x] = arr[currMinIdx];
+        arr[currMinIdx] = temp;
     }
    return arr; 
 }
-//var c = sSort([3, 44, 38, 5, 47, 15]);
-//console.log(c);
+
+var c = selectionSort([3,44,5,38,9,100,6,8,0]);
+console.log(c);
 
 
 function insertionSort(arr) {
@@ -53,21 +59,37 @@ function insertionSort(arr) {
 //var i = insertionSort([3,55,48,7,9, 200, 4, 10]);
 //console.log(i);
 
-function mergeSort(arr1, arr2){
-    var newArr = arr1.concat(arr2);
-    for(var x=0; x < newArr.length -1; x++){
-        for(var y= 0; y < newArr.length -1 -x; y++){
-            if(newArr[y] > newArr[y + 1]){
-                let temp = newArr[y];
-                newArr[y] = newArr[y+1];
-                newArr[y+1] = temp;
-            }
-        }
-    }
-   return newArr;
-}
-//var m = mergeSort([3,44,38,5], [47,15,36,26]);
-//console.log(m);
+function mergeSort(arr){
+    var len = arr.length;
+    if(len <2)
+       return arr;
+    var mid = Math.floor(len/2),
+        left = arr.slice(0,mid),
+        right =arr.slice(mid);
+    //send left and right to the mergeSort to broke it down into pieces
+    //then merge those
+    return merge(mergeSort(left),mergeSort(right));
+ }
+
+ function merge(left, right){
+    var result = [],
+        lLen = left.length,
+        rLen = right.length,
+        l = 0,
+        r = 0;
+    while(l < lLen && r < rLen){
+       if(left[l] < right[r]){
+         result.push(left[l++]);
+       }
+       else{
+         result.push(right[r++]);
+      }
+    }  
+    //remaining part needs to be addred to the result
+    return result.concat(left.slice(l)).concat(right.slice(r));
+  }
+
+  //var x = mergeSort([6,45,90,0,10,2,9,1,4,2]);
 
 
 function heap(){
@@ -94,23 +116,23 @@ heap.prototype.Add = function(val) {
     return this.arr;
 }
 
-var x = new heap();
-console.log(x);
-// console.log(x.Add(9));
-// console.log(x.Add(15));
-// console.log(x.Add(20));
-// console.log(x.Add(1));
-// console.log(x.Add(3));
-// console.log(x.Add(7));
-// console.log(x.Add(-13));
-// console.log(x.Add(15));
-// console.log(x.Add(-20));
-// console.log(x.Add(25));
+// var x = new heap();
+// console.log(x);
+// // console.log(x.Add(9));
+// // console.log(x.Add(15));
+// // console.log(x.Add(20));
+// // console.log(x.Add(1));
+// // console.log(x.Add(3));
+// // console.log(x.Add(7));
+// // console.log(x.Add(-13));
+// // console.log(x.Add(15));
+// // console.log(x.Add(-20));
+// // console.log(x.Add(25));
 
-console.log(x.Add(9));
-console.log(x.Add(6));
-console.log(x.Add(9));
-console.log(x.Add(-3));
-console.log(x.Add(7));
+// console.log(x.Add(9));
+// console.log(x.Add(6));
+// console.log(x.Add(9));
+// console.log(x.Add(-3));
+// console.log(x.Add(7));
 
 
