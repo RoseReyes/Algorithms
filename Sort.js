@@ -40,14 +40,15 @@ function selectionSort(arr) {
    return arr; 
 }
 
-var c = selectionSort([3,44,5,38,9,100,6,8,0]);
-console.log(c);
+//var c = selectionSort([3,44,5,38,9,100,6,8,0]);
+//console.log(c);
 
 
 function insertionSort(arr) {
-    for(var x=1; x < arr.length; x++){ // loop through the array
+    for(var x=1; x < arr.length; x++){ 
         var firstSortElement = arr[x]; // set the first sorted element in our sorted side of the array
         var y = x; 
+
        while(y > 0 && arr[y -1] > firstSortElement) { 
             arr[y] = arr[y - 1];
             y = y -1;
@@ -85,11 +86,53 @@ function mergeSort(arr){
          result.push(right[r++]);
       }
     }  
-    //remaining part needs to be addred to the result
+    //remaining part needs to be address to the result
     return result.concat(left.slice(l)).concat(right.slice(r));
   }
 
   //var x = mergeSort([6,45,90,0,10,2,9,1,4,2]);
+ // console.log(x);
+
+
+
+//QuickSort
+function quickSort(arr, left, right){
+   var len = arr.length, pivot, partitionIndex;
+ 
+   if(left < right){
+     pivot = right;
+     partitionIndex = partition(arr, pivot, left, right);
+     
+    //sort left and right
+    quickSort(arr, left, partitionIndex - 1);
+    quickSort(arr, partitionIndex + 1, right);
+   }
+   return arr;
+ }
+
+//put all the small values on the left side of the pivot and the large values to the right
+ function partition(arr, pivot, left, right){
+    var pivotValue = arr[pivot], partitionIndex = left;
+ 
+    for(var i = left; i < right; i++){
+     if(arr[i] < pivotValue){
+       swap(arr, i, partitionIndex);
+       partitionIndex++;
+     }
+   }
+   swap(arr, right, partitionIndex);
+   return partitionIndex;
+ }
+
+ //helper to swap 
+ function swap(arr, i, j){
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+ }
+
+ //var q = quickSort([11,8,14,3,6,2,7],0,6); 
+ //console.log(q);
 
 
 function heap(){

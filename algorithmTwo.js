@@ -10,7 +10,6 @@ linearSearch(0, [4,5,1,2]);
 function iBS(arr, num){
     var min = 0;
     var max = arr.length - 1;
-    console.log(max, min)
     while (min <= max) {
        let mid = Math.floor((min + max)/2);
        if (arr[mid] == num) {
