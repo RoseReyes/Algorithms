@@ -2,13 +2,13 @@ function maxRepeat(str) {
     var count = 0;
     var maxChar = str[0];
    
-    for (var i = 0; i < str.length; i++)
+    for (var x = 0; x < str.length; x++)
     {   
         var currCount = 1;
         
-        for (var j = i + 1; j < str.length; j++)
+        for (var y = x + 1; y < str.length; y++)
         {
-            if (str[i] != str[j]){
+            if (str[x] != str[y]){
                 break;
             }  
             currCount++;
@@ -16,10 +16,12 @@ function maxRepeat(str) {
         if (currCount > count)
         {
             count = currCount;
-            maxChar = str[i];
+            maxChar = str[x];
         }
     }
+    
     return maxChar;
 }
+
 var x = maxRepeat("bbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 console.log(x);
