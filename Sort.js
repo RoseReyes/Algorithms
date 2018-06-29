@@ -62,7 +62,7 @@ function insertionSort(arr) {
 
 function mergeSort(arr){
     var len = arr.length;
-    if(len <2)
+    if(len < 2)
        return arr;
     var mid = Math.floor(len/2),
         left = arr.slice(0,mid),
