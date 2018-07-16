@@ -17,7 +17,7 @@ BST.prototype.add = function(val){
     else {
         var currentNode = this.root;
         while(currentNode){
-            if (currentNode.val < val) {
+            if (currentNode.val > val) {
                 if (currentNode.right == null) {
                     currentNode.right = bstNode;
                     return;
