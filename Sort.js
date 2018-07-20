@@ -178,4 +178,3 @@ heap.prototype.Add = function(val) {
 // console.log(x.Add(-3));
 // console.log(x.Add(7));
 
-
