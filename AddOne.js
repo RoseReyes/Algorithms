@@ -18,11 +18,3 @@ function addOne(arr){
 var a = addOne([1,2]);
 console.log(a);
 
-
-
-
-
-
-//get the lenght-1 of the array
-//find that digit, if exists then add 1
-//return concatenated string of array
