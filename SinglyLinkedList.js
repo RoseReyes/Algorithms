@@ -72,5 +72,5 @@ console.log(x.addFrontAndBack(100));
 console.log(x.addFrontAndBack(5));
 console.log(x.addFrontAndBack(90));
 console.log(x.addFrontAndBack(79));
-console.log(x.contains(5));
-console.log(x.remove(3));
+console.log(x.remove(5));
+
