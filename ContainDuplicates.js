@@ -29,7 +29,6 @@ var containDups = function(nums)
         if(sortArr[fastPointer] === sortArr[slowPointer])
         {
             slowPointer++;
-            sortArr[slowPointer] = sortArr[fastPointer];
             is_true = true;
         }
         else {
@@ -41,3 +40,5 @@ var containDups = function(nums)
 }
 
 console.log(containDups([1,2,3,4]));
+console.log(containDups([1,1,2,2,2,3,4]));
+console.log(containDups([2,14,18,22,22,22]));
